@@ -21,6 +21,8 @@ jobs:
         with:
           repository: transpara-ai/eventgraph
           path: eventgraph
+          # eventgraph is private; the default token cannot read another repository.
+          ssh-key: ${{ secrets.EVENTGRAPH_DEPLOY_KEY }}
 
       - uses: actions/setup-go@v5
         with:
